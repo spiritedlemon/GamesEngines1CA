@@ -22,11 +22,12 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(0, 0, z);
 		
 		
-		
+		/*
 		if (Input.GetKeyDown(KeyCode.E))
         {
             print("Enter vehicle key was pressed");
         }
+		*/
 		
     }
 }
