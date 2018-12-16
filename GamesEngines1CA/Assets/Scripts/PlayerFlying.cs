@@ -16,16 +16,22 @@ public class PlayerFlying : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		var x = Input.GetAxis("Horizontal") * Time.deltaTime * -100.0f;
+		var t = Input.GetAxis("Horizontal") * Time.deltaTime * 100.0f;
         var z = Input.GetAxis("Vertical") * Time.deltaTime * -8.0f;
 
-        transform.Rotate(0, x, 0);
+        transform.Rotate(0, t, 0);
         transform.Translate(0, 0, z);
 		
 		
-		var p = Input.GetAxis("Vertical") * Time.deltaTime * -8.0f;
-		transform.Rotate(p, 0, 0);
-		Debug.Log(p);
+		//var p = Input.GetAxis("Vertical") * Time.deltaTime * 100.0f;
+		//transform.Rotate(p, 0, 0);
+		//Debug.Log(p);
+		
+		
+		float x = Input.GetAxis("Vertical") * 15.0f; 
+		Vector3 euler = transform.localEulerAngles;
+		euler.x = Mathf.Lerp(euler.x, x, 1.0f * Time.deltaTime);
+		transform.localEulerAngles = euler;
 		
 		if(Input.GetKey(KeyCode.Space))
 		{
