@@ -24,6 +24,11 @@ public class EnterVehicle : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.E))
         {
             print("Enter vehicle key was pressed");
+			
+			GameObject PlayerGO = GameObject.FindWithTag("Player");
+			GameObject PlayerCam =  GameObject.Find("PlayerCamera");
+			//GameObject PlayerGO = GameObject.FindWithTag("Player");
+			PlayerCam.GetComponent<Camera>().enabled = false;
         }
 	}
 	
