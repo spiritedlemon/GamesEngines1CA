@@ -22,6 +22,11 @@ public class PlayerFlying : MonoBehaviour {
         transform.Rotate(0, x, 0);
         transform.Translate(0, 0, z);
 		
+		
+		var p = Input.GetAxis("Vertical") * Time.deltaTime * -8.0f;
+		transform.Rotate(p, 0, 0);
+		Debug.Log(p);
+		
 		if(Input.GetKey(KeyCode.Space))
 		{
 			Debug.Log("Player going up");
@@ -33,6 +38,8 @@ public class PlayerFlying : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.LeftShift))
 		{
 			Debug.Log("Player going down");
+			var h = 1 * Time.deltaTime * -8.0f;
+			transform.Translate(0, h, 0);
 		}
 		
 		
