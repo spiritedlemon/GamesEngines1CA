@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class EnterVehicle : MonoBehaviour {
 
+	void Awake()
+	{
+		GameObject HelicopterCam =  GameObject.Find("VehicleCamera"); //FindVehicleCam game object
+		HelicopterCam.GetComponent<Camera>().enabled = false; //Disable helicopter camera on startup
+		
+	}
 	// Use this for initialization
 	void Start () 
 	{
@@ -23,12 +29,18 @@ public class EnterVehicle : MonoBehaviour {
 		//Debug.Log ("In trigger");
 		if (Input.GetKeyDown(KeyCode.E))
         {
-            print("Enter vehicle key was pressed");
+            //print("Player Movement and camera are disabled");
 			
-			GameObject PlayerGO = GameObject.FindWithTag("Player");
-			GameObject PlayerCam =  GameObject.Find("PlayerCamera");
-			//GameObject PlayerGO = GameObject.FindWithTag("Player");
-			PlayerCam.GetComponent<Camera>().enabled = false;
+			GameObject PlayerGO = GameObject.FindWithTag("Player"); //Find player game object
+			GameObject PlayerCam =  GameObject.Find("PlayerCamera"); //Find playerCam game object
+			PlayerCam.GetComponent<Camera>().enabled = false; //Disable Player camera
+			PlayerGO.GetComponent<PlayerMovement>().enabled = false; //Disable player movement
+			
+			
+			//GameObject HelicopterGO = GameObject.FindWithTag("Vehicle"); //Find Helicopter game object
+			GameObject HelicopterCam =  GameObject.Find("VehicleCamera"); //FindVehicleCam game object
+			HelicopterCam.GetComponent<Camera>().enabled = true; //Enable helicopter camera
+			
         }
 	}
 	
