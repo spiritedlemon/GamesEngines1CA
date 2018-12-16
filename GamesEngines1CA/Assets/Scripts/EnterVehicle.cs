@@ -6,8 +6,8 @@ public class EnterVehicle : MonoBehaviour {
 
 	void Awake()
 	{
-		GameObject HelicopterCam =  GameObject.Find("VehicleCamera"); //FindVehicleCam game object
-		HelicopterCam.GetComponent<Camera>().enabled = false; //Disable helicopter camera on startup
+		//GameObject HelicopterCam =  GameObject.Find("VehicleCamera"); //FindVehicleCam game object
+		//HelicopterCam.GetComponent<Camera>().enabled = false; //Disable helicopter camera on startup
 		
 	}
 	// Use this for initialization
@@ -31,15 +31,21 @@ public class EnterVehicle : MonoBehaviour {
         {
             //print("Player Movement and camera are disabled");
 			
-			GameObject PlayerGO = GameObject.FindWithTag("Player"); //Find player game object
 			GameObject PlayerCam =  GameObject.Find("PlayerCamera"); //Find playerCam game object
 			PlayerCam.GetComponent<Camera>().enabled = false; //Disable Player camera
+			
+			GameObject PlayerGO = GameObject.FindWithTag("Player"); //Find player game object
 			PlayerGO.GetComponent<PlayerMovement>().enabled = false; //Disable player movement
 			
 			
-			//GameObject HelicopterGO = GameObject.FindWithTag("Vehicle"); //Find Helicopter game object
 			GameObject HelicopterCam =  GameObject.Find("VehicleCamera"); //FindVehicleCam game object
 			HelicopterCam.GetComponent<Camera>().enabled = true; //Enable helicopter camera
+			
+			GameObject HelicopterGO = GameObject.FindWithTag("Vehicle"); //Find Helicopter game object
+			HelicopterGO.GetComponent<PlayerFlying>().enabled = true; //Enable player Flying (Helicopter)
+			
+			GameObject Rotor = GameObject.Find("BladeMount"); //Find Helicopter Blades game object
+			Rotor.GetComponent<RotateBlades>().enabled = true; //Enable Blades Spinning
 			
         }
 	}
