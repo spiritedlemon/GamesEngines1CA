@@ -11,18 +11,29 @@ public class PlayerFlying : MonoBehaviour {
 		//Debug.Log("Player in Helicopter");
 		
 		
-		
-		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
-		var x = Input.GetAxis("Horizontal") * Time.deltaTime * 100.0f;
-        var z = Input.GetAxis("Vertical") * Time.deltaTime * 8.0f;
+		var x = Input.GetAxis("Horizontal") * Time.deltaTime * -100.0f;
+        var z = Input.GetAxis("Vertical") * Time.deltaTime * -8.0f;
 
         transform.Rotate(0, x, 0);
         transform.Translate(0, 0, z);
+		
+		if(Input.GetKey(KeyCode.Space))
+		{
+			Debug.Log("Player going up");
+			var h = 1 * Time.deltaTime * 8.0f;
+			transform.Translate(0, h, 0);
+			
+		}
+		
+		if(Input.GetKeyDown(KeyCode.LeftShift))
+		{
+			Debug.Log("Player going down");
+		}
 		
 		
 	}
