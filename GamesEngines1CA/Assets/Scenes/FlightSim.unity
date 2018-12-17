@@ -179,6 +179,84 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &414600635 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1141294488648020, guid: 191b2ff03ecef3a4381191300aee3f37,
+    type: 2}
+  m_PrefabInternal: {fileID: 1434882481}
+--- !u!114 &414600641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 414600635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c1403f1099ac246a6d63a3fdec0027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quadsPerTile: 10
+  meshMaterial: {fileID: 2100000, guid: 404db883fe071d14ab76a7eee9e14616, type: 2}
+  amplitude: 50
+  whichSampler: 0
+--- !u!4 &452361978 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4711069187441472, guid: da5093b76cbf7764fba7b14ee8276bc2,
+    type: 2}
+  m_PrefabInternal: {fileID: 2061081586}
+--- !u!1001 &1434882481
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4113785927150198, guid: 191b2ff03ecef3a4381191300aee3f37, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.6973505
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113785927150198, guid: 191b2ff03ecef3a4381191300aee3f37, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 8.570061
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113785927150198, guid: 191b2ff03ecef3a4381191300aee3f37, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 9.562935
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113785927150198, guid: 191b2ff03ecef3a4381191300aee3f37, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113785927150198, guid: 191b2ff03ecef3a4381191300aee3f37, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113785927150198, guid: 191b2ff03ecef3a4381191300aee3f37, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113785927150198, guid: 191b2ff03ecef3a4381191300aee3f37, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113785927150198, guid: 191b2ff03ecef3a4381191300aee3f37, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23613259170655852, guid: 191b2ff03ecef3a4381191300aee3f37,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 056f2d966147d294eb502c629fbeca78, type: 2}
+    - target: {fileID: 114272602044694592, guid: 191b2ff03ecef3a4381191300aee3f37,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114272602044694592, guid: 191b2ff03ecef3a4381191300aee3f37, type: 2}
+  m_SourcePrefab: {fileID: 100100000, guid: 191b2ff03ecef3a4381191300aee3f37, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1803996133
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1803996135}
   - component: {fileID: 1803996134}
+  - component: {fileID: 1803996136}
   m_Layer: 0
   m_Name: TerrainGen
   m_TagString: Untagged
@@ -201,15 +280,15 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1803996133}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8d6440a31f720646b9338a9e745a9e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilePrefab: {fileID: 0}
-  player: {fileID: 0}
-  quadsPerTile: 0
-  halfTile: 5
+  tilePrefab: {fileID: 414600635}
+  player: {fileID: 452361978}
+  quadsPerTile: 10
+  halfTile: 10
 --- !u!4 &1803996135
 Transform:
   m_ObjectHideFlags: 0
@@ -221,8 +300,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1803996136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1803996133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b04758e0f8070464bbbd122fbbb6cc09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilePrefab: {fileID: 414600635}
+  player: {fileID: 452361978}
+  quadsPerTile: 10
+  halfTile: 10
 --- !u!1001 &2061081586
 Prefab:
   m_ObjectHideFlags: 0
@@ -260,7 +354,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4711069187441472, guid: da5093b76cbf7764fba7b14ee8276bc2, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da5093b76cbf7764fba7b14ee8276bc2, type: 2}
