@@ -5,16 +5,15 @@ Games Engines 1 Assignment
 Simon O’Leary – C15413218
 
 
+Flight simulator set in a procedurally generated world
 
-Flight simulator with a focus on a procedurally generated world
-
---Player controlled aircraft
+--Player controlled aircraft(Helicopter)
 
 --Procedural world
 
---Possibly multiple vehicles -> Depends on modelling
+--Trees swaying to the music
 
---Unity standard assets come with plane AI – May add other planes flying around 
+--VR controls available
 
 
 Links:
