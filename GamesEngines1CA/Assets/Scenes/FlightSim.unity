@@ -179,6 +179,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &452361978 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4711069187441472, guid: da5093b76cbf7764fba7b14ee8276bc2,
+    type: 2}
+  m_PrefabInternal: {fileID: 2061081586}
 --- !u!1001 &2061081586
 Prefab:
   m_ObjectHideFlags: 0
@@ -248,6 +253,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d6440a31f720646b9338a9e745a9e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tilePrefab: {fileID: 1477745776440278, guid: e2854b7ebaa67cf448bcbf96fb5a6d61, type: 2}
+  player: {fileID: 452361978}
+  quadsPerTile: 10
+  halfTile: 5
 --- !u!4 &2107637352
 Transform:
   m_ObjectHideFlags: 0
