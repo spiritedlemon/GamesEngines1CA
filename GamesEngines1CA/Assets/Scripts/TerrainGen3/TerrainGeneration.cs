@@ -10,9 +10,16 @@ public class TerrainGeneration : MonoBehaviour {
 	public int height = 256;
 	
 	public float scale = 20f;
+	
+	//Randomise the terrain
+	//public float offsetX = 100f;
+	//public float offsetY = 100f;
 
 	// Use this for initialization
 	void Start () {
+		//offsetX = Random.Range(0f, 9999f);
+		//offsetX = Random.Range(0f, 9999f);
+		
 		Terrain terrain = GetComponent<Terrain>();
 		terrain.terrainData = GenerateTerrain(terrain.terrainData);
 		
@@ -46,7 +53,7 @@ public class TerrainGeneration : MonoBehaviour {
 	
 	float CalculateHeight (int x, int y)
 	{
-		float xCoord = (float)x/width * scale;
+		float xCoord = (float)x/width * scale; //+offsetX
 		float yCoord = (float)y/height * scale;
 		
 		return Mathf.PerlinNoise(xCoord, yCoord);
