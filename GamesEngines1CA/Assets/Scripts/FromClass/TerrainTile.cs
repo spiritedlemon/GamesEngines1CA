@@ -26,7 +26,7 @@ public class TerrainTile : MonoBehaviour {
     Vector2 offset;
     // Use this for initialization
     void Awake() {
-        //offset = Random.insideUnitCircle * Random.Range(0, 1000); 
+        offset = Random.insideUnitCircle * Random.Range(0, 1000); 
         MeshFilter mf = gameObject.AddComponent<MeshFilter>(); // Container for the mesh
         MeshRenderer mr = gameObject.AddComponent<MeshRenderer>(); // Draw
         MeshCollider mc = gameObject.AddComponent<MeshCollider>();
@@ -105,14 +105,6 @@ public class TerrainTile : MonoBehaviour {
         return Mathf.Sin(Map(x, 0, 100, 0, Mathf.PI))
         * Mathf.Sin(Map(y, 0, 100, 0, Mathf.PI)) * 40;
     }
-	
-	public static float Map(float value, float r1, float r2, float m1, float m2)
-    {
-        float dist = value - r1;
-        float range1 = r2 - r1;
-        float range2 = m2 - m1;
-        return m1 + ((dist / range1) * range2);
-    }
 
     // Additive perlin noise
     public static float SampleCell1(float x, float y)
@@ -142,6 +134,14 @@ public class TerrainTile : MonoBehaviour {
         }
         return (noise * 300);
     }
+	
+	public static float Map(float value, float r1, float r2, float m1, float m2)
+    {
+        float dist = value - r1;
+        float range1 = r2 - r1;
+        float range2 = m2 - m1;
+        return m1 + ((dist / range1) * range2);
+    }
 
     // Mountains and valleys & bumps
     public static float SampleCell3(float x, float y)
@@ -163,7 +163,7 @@ public class TerrainTile : MonoBehaviour {
         
         return (noise * 300) + (Mathf.PerlinNoise(1000 + x / 5, 100 + y / 5) * 2);
     }
-    //float t = 0;
+    float t = 0;
 	// Update is called once per frame   
     
     /*        
