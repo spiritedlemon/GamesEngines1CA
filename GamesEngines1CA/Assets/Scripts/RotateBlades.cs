@@ -14,7 +14,7 @@ public class RotateBlades : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		GameObject Rotor =  GameObject.Find("BladeMount"); //Find Heli rotor blades
+		//GameObject Rotor =  GameObject.Find("BladeMount"); //Find Heli rotor blades
 		transform.Rotate(Vector3.up, speed * Time.deltaTime);
 		
 	}

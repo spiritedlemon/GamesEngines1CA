@@ -26,7 +26,7 @@ public class TerrainTile : MonoBehaviour {
     Vector2 offset;
     // Use this for initialization
     void Awake() {
-        offset = Random.insideUnitCircle * Random.Range(0, 1000); 
+        //offset = Random.insideUnitCircle * Random.Range(0, 1000); 
         MeshFilter mf = gameObject.AddComponent<MeshFilter>(); // Container for the mesh
         MeshRenderer mr = gameObject.AddComponent<MeshRenderer>(); // Draw
         MeshCollider mc = gameObject.AddComponent<MeshCollider>();
@@ -155,7 +155,7 @@ public class TerrainTile : MonoBehaviour {
         
         return (noise * 300) + (Mathf.PerlinNoise(1000 + x / 5, 100 + y / 5) * 2);
     }
-    float t = 0;
+    //float t = 0;
 	// Update is called once per frame   
     
     /*        

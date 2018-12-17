@@ -11,6 +11,8 @@ public class HexMetrics : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
+		
+		
 	}
 	
 	public static Vector3[] corners = {
