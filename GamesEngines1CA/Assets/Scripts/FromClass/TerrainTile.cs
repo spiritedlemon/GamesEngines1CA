@@ -102,8 +102,16 @@ public class TerrainTile : MonoBehaviour {
     public static float SampleCell0(float x, float y)
     {
 
-        return Mathf.Sin(Utilities.Map(x, 0, 100, 0, Mathf.PI))
-        * Mathf.Sin(Utilities.Map(y, 0, 100, 0, Mathf.PI)) * 40;
+        return Mathf.Sin(Map(x, 0, 100, 0, Mathf.PI))
+        * Mathf.Sin(Map(y, 0, 100, 0, Mathf.PI)) * 40;
+    }
+	
+	public static float Map(float value, float r1, float r2, float m1, float m2)
+    {
+        float dist = value - r1;
+        float range1 = r2 - r1;
+        float range2 = m2 - m1;
+        return m1 + ((dist / range1) * range2);
     }
 
     // Additive perlin noise
