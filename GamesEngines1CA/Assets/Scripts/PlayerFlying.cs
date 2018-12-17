@@ -27,11 +27,12 @@ public class PlayerFlying : MonoBehaviour {
 		//transform.Rotate(p, 0, 0);
 		//Debug.Log(p);
 		
-		
+		/*
 		float x = Input.GetAxis("Vertical") * 15.0f; 
 		Vector3 euler = transform.localEulerAngles;
 		euler.x = Mathf.Lerp(euler.x, x, 1.0f * Time.deltaTime);
 		transform.localEulerAngles = euler;
+		*/
 		
 		if(Input.GetKey(KeyCode.Space))
 		{
@@ -41,7 +42,7 @@ public class PlayerFlying : MonoBehaviour {
 			
 		}
 		
-		if(Input.GetKeyDown(KeyCode.LeftShift))
+		if(Input.GetKey(KeyCode.LeftShift))
 		{
 			Debug.Log("Player going down");
 			var h = 1 * Time.deltaTime * -8.0f;
