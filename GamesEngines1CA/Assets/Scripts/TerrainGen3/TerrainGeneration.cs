@@ -16,7 +16,7 @@ public class TerrainGeneration : MonoBehaviour {
 	//public float offsetY = 100f;
 
 	// Use this for initialization
-	void Start () {
+	void Update () {
 		//offsetX = Random.Range(0f, 9999f);
 		//offsetX = Random.Range(0f, 9999f);
 		
@@ -54,13 +54,14 @@ public class TerrainGeneration : MonoBehaviour {
 	float CalculateHeight (int x, int y)
 	{
 		float xCoord = (float)x/width * scale; //+offsetX
+		//Debug.Log(xCoord);
 		float yCoord = (float)y/height * scale;
 		
 		return Mathf.PerlinNoise(xCoord, yCoord);
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Start () {
 		
 	}
 }
