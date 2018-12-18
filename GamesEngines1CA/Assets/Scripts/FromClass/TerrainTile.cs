@@ -30,6 +30,7 @@ public class TerrainTile : MonoBehaviour {
     void Awake() {
 		
 		//GameObject tree = GameObject.Find("Tree1"); //Find tree game object
+		int treeCount = 0;
 		
         offset = Random.insideUnitCircle * Random.Range(0, 1000); 
         MeshFilter mf = gameObject.AddComponent<MeshFilter>(); // Container for the mesh
@@ -87,9 +88,16 @@ public class TerrainTile : MonoBehaviour {
                 {
                     minY = bl.y;
                 }
+				
+				if(treeCount < 200)
+				{
+					Instantiate(tree);//, Vector3 (col, sampleCell[whichSampler](transform.position.x + col, transform.position.z + row), row));
+					treeCount++;
+				}
             }
         }
         //Debug.Log(minY + " : " + maxY);
+		Debug.Log(treeCount);
         m.vertices = vertices;
         m.uv = uv;
         m.triangles = triangles;        
@@ -98,7 +106,7 @@ public class TerrainTile : MonoBehaviour {
         mc.sharedMesh = m;
         mr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
         mr.receiveShadows = true;
-		Instantiate(tree);
+		
 	}
     
     // Sample with a sine wave
