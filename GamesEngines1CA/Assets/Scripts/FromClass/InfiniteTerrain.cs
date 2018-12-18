@@ -14,9 +14,11 @@ public class InfiniteTerrain : MonoBehaviour {
     void Start()
 	{
         TerrainTile tt = tilePrefab.GetComponent<TerrainTile>();
+		TreeTile trt = tree.GetComponent<TreeTile>();
         if (tt != null)
         {
             quadsPerTile = tt.quadsPerTile;
+			quadsPerTile = trt.quadsPerTile;
         }
         
         if (player == null)
