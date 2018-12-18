@@ -66,6 +66,8 @@ public class InfiniteTerrain : MonoBehaviour {
                         Vector3 pos = new Vector3((x * quadsPerTile + playerX),
                             0,
                             (z * quadsPerTile + playerZ));
+							
+						
                         string tilename = "Tile_" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
                         if (!tiles.ContainsKey(tilename))
                         {
@@ -81,10 +83,8 @@ public class InfiniteTerrain : MonoBehaviour {
                 newTiles.Sort((a, b) => (int)Vector3.SqrMagnitude(player.transform.position - a) - (int)Vector3.SqrMagnitude(player.transform.position - b));
                 foreach (Vector3 pos in newTiles)
                 {
-					//if(treeCount < 200)
+					
 					GameObject tree1 = GameObject.Instantiate<GameObject>(tree, pos, Quaternion.identity);
-					//Instantiate(tree, new Vector3(tree, pos, Quaternion.identity), Quaternion.identity);
-					//treeCount++;
 					
                     GameObject t = GameObject.Instantiate<GameObject>(tilePrefab, pos, Quaternion.identity);
                     t.transform.parent = this.transform;
