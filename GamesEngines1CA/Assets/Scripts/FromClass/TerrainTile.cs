@@ -94,9 +94,6 @@ public class TerrainTile : MonoBehaviour {
         mr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
         mr.receiveShadows = true;
 	}
-
-
-    // SHould really make a new class for all this!
     
     // Sample with a sine wave
     public static float SampleCell0(float x, float y)
