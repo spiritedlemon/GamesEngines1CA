@@ -11,6 +11,8 @@ public class TerrainTile : MonoBehaviour {
     public float amplitude = 50;
 
     Mesh m;
+	
+	
 
     private delegate float SampleCell(float x, float y);
 
@@ -128,6 +130,7 @@ public class TerrainTile : MonoBehaviour {
         else
         {
             noise = 0.5f;
+			
         }
         return (noise * 300);
     }
@@ -139,7 +142,7 @@ public class TerrainTile : MonoBehaviour {
         float range2 = m2 - m1;
         return m1 + ((dist / range1) * range2);
     }
-
+	
     // Mountains and valleys & bumps
     public static float SampleCell3(float x, float y)
     {
@@ -156,23 +159,10 @@ public class TerrainTile : MonoBehaviour {
         else
         {
             noise = 0.5f;
+			
         }
         
         return (noise * 300) + (Mathf.PerlinNoise(1000 + x / 5, 100 + y / 5) * 2);
     }
-    float t = 0;
-	// Update is called once per frame   
-    
-    /*        
-	void Update () {
-        Vector3[] vertices = m.vertices;
-        for (int i = 0; i < vertices.Length; i++)
-        {
-            vertices[i].y = SampleCell(transform.position.x + vertices[i].x, transform.position.z + vertices[i].z + t);
-        }
-        m.vertices = vertices;
-        //t += Time.deltaTime;
-        m.RecalculateNormals();
-	}
-    */
+    //float t = 0;
 }
