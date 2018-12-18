@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InfiniteTerrain : MonoBehaviour {
     public GameObject tilePrefab;
-	public GameObject tree;
+	//public GameObject tree;
     public Transform player;
     public int quadsPerTile;
 
@@ -14,11 +14,10 @@ public class InfiniteTerrain : MonoBehaviour {
     void Start()
 	{
         TerrainTile tt = tilePrefab.GetComponent<TerrainTile>();
-		TreeTile trt = tree.GetComponent<TreeTile>();
+		//TreeTile trt = tree.GetComponent<TreeTile>();
         if (tt != null)
         {
             quadsPerTile = tt.quadsPerTile;
-			quadsPerTile = trt.quadsPerTile;
         }
         
         if (player == null)
@@ -86,9 +85,8 @@ public class InfiniteTerrain : MonoBehaviour {
                 foreach (Vector3 pos in newTiles)
                 {
 					
-					GameObject tree1 = GameObject.Instantiate<GameObject>(tree, pos, Quaternion.identity);
-					
                     GameObject t = GameObject.Instantiate<GameObject>(tilePrefab, pos, Quaternion.identity);
+					//GameObject tree1 = GameObject.Instantiate<GameObject>(tree, pos, Quaternion.identity);
                     t.transform.parent = this.transform;
                     string tilename = "Tile_" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
                     t.name = tilename;
@@ -96,6 +94,21 @@ public class InfiniteTerrain : MonoBehaviour {
                     tiles[tilename] = tile;
                     yield return null;
                 }
+				
+				/*
+				foreach (Vector3 treepos in newTiles)
+                {
+					
+                    GameObject tree1 = GameObject.Instantiate<GameObject>(tree, treepos, Quaternion.identity);
+                    tree1.transform.parent = this.transform;
+                    string tilename = "Tile_" + ((int)(treepos.x)).ToString() + "_" + ((int)(treepos.z)).ToString();
+                    tree1.name = tilename;
+                    Tile tile = new Tile(tree1, updateTime);
+                    tiles[tilename] = tile;
+                    yield return null;
+                }
+				*/
+				
 
                 //destroy all tiles not just created or with time updated
                 //and put new tiles and tiles to be kepts in a new hashtable

@@ -30,10 +30,10 @@ public class TreeTile : MonoBehaviour {
 		//int treeCount = 0;
 		
         //offset = Random.insideUnitCircle * Random.Range(0, 1000); 
-        MeshFilter mf = gameObject.AddComponent<MeshFilter>(); // Container for the mesh
-        MeshRenderer mr = gameObject.AddComponent<MeshRenderer>(); // Draw
-        MeshCollider mc = gameObject.AddComponent<MeshCollider>();
-        m = mf.mesh;
+        //MeshFilter mf = gameObject.AddComponent<MeshFilter>(); // Container for the mesh
+        //MeshRenderer mr = gameObject.AddComponent<MeshRenderer>(); // Draw
+        //MeshCollider mc = gameObject.AddComponent<MeshCollider>();
+        //m = mf.mesh;
 
         int verticesPerQuad = 4;
         Vector3[] vertices = new Vector3[verticesPerQuad * quadsPerTile * quadsPerTile];
@@ -90,14 +90,14 @@ public class TreeTile : MonoBehaviour {
             }
         }
 		
-		m.vertices = vertices;
-        m.uv = uv;
-        m.triangles = triangles;        
-        m.RecalculateNormals();
+		//m.vertices = vertices;
+        //m.uv = uv;
+        //m.triangles = triangles;        
+        //m.RecalculateNormals();
         //mr.material = meshMaterial;
-        mc.sharedMesh = m;
-        mr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
-        mr.receiveShadows = true;
+        //mc.sharedMesh = m;
+        //mr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+        //mr.receiveShadows = true;
 		
 	}
 	
