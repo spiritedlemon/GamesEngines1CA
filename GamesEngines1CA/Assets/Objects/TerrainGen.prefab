@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4652529880318496}
   - component: {fileID: 114117800038302460}
   m_Layer: 0
-  m_Name: TerrainGen
+  m_Name: TerrainGen(Class)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

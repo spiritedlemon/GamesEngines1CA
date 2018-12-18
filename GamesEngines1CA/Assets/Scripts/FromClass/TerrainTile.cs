@@ -24,14 +24,14 @@ public class TerrainTile : MonoBehaviour {
 
     public int whichSampler = 0;
 
-    Vector2 offset;
+    //Vector2 offset;
     // Use this for initialization
     void Awake() {
 		
 		//GameObject tree = GameObject.Find("Tree1"); //Find tree game object
 		//int treeCount = 0;
 		
-        offset = Random.insideUnitCircle * Random.Range(0, 1000); 
+        //offset = Random.insideUnitCircle * Random.Range(0, 1000); 
         MeshFilter mf = gameObject.AddComponent<MeshFilter>(); // Container for the mesh
         MeshRenderer mr = gameObject.AddComponent<MeshRenderer>(); // Draw
         MeshCollider mc = gameObject.AddComponent<MeshCollider>();

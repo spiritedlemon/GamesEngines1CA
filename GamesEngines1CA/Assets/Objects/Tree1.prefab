@@ -37,7 +37,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4791452687970954}
-  - component: {fileID: 114996265636341410}
   m_Layer: 0
   m_Name: Tree1
   m_TagString: Untagged
@@ -188,20 +187,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1986910522570514}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114996265636341410
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1905694514093100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e9c4685dea6fe5468a573d3d44a4060, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  quadsPerTile: 10
-  amplitude: 50
-  whichSampler: 3
 --- !u!135 &135197027697213948
 SphereCollider:
   m_ObjectHideFlags: 1
