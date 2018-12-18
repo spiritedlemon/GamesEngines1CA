@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InfiniteTerrain : MonoBehaviour {
     public GameObject tilePrefab;
+	public GameObject tree;
     public Transform player;
     public int quadsPerTile;
 
@@ -80,6 +81,11 @@ public class InfiniteTerrain : MonoBehaviour {
                 newTiles.Sort((a, b) => (int)Vector3.SqrMagnitude(player.transform.position - a) - (int)Vector3.SqrMagnitude(player.transform.position - b));
                 foreach (Vector3 pos in newTiles)
                 {
+					//if(treeCount < 200)
+					GameObject tree1 = GameObject.Instantiate<GameObject>(tree, pos, Quaternion.identity);
+					//Instantiate(tree, new Vector3(tree, pos, Quaternion.identity), Quaternion.identity);
+					//treeCount++;
+					
                     GameObject t = GameObject.Instantiate<GameObject>(tilePrefab, pos, Quaternion.identity);
                     t.transform.parent = this.transform;
                     string tilename = "Tile_" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();

@@ -12,7 +12,6 @@ public class TerrainTile : MonoBehaviour {
 
     Mesh m;
 	
-	public GameObject tree;
 
     private delegate float SampleCell(float x, float y);
 
@@ -30,7 +29,7 @@ public class TerrainTile : MonoBehaviour {
     void Awake() {
 		
 		//GameObject tree = GameObject.Find("Tree1"); //Find tree game object
-		int treeCount = 0;
+		//int treeCount = 0;
 		
         offset = Random.insideUnitCircle * Random.Range(0, 1000); 
         MeshFilter mf = gameObject.AddComponent<MeshFilter>(); // Container for the mesh
@@ -89,15 +88,10 @@ public class TerrainTile : MonoBehaviour {
                     minY = bl.y;
                 }
 				
-				if(treeCount < 200)
-				{
-					Instantiate(tree);//, Vector3 (col, sampleCell[whichSampler](transform.position.x + col, transform.position.z + row), row));
-					treeCount++;
-				}
             }
         }
         //Debug.Log(minY + " : " + maxY);
-		Debug.Log(treeCount);
+		//Debug.Log(treeCount);
         m.vertices = vertices;
         m.uv = uv;
         m.triangles = triangles;        
