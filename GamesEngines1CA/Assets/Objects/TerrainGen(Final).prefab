@@ -9,17 +9,17 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1650150635480608}
+  m_RootGameObject: {fileID: 1065264614812580}
   m_IsPrefabAsset: 1
---- !u!1 &1650150635480608
+--- !u!1 &1065264614812580
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4693469477314132}
-  - component: {fileID: 114236513755435422}
+  - component: {fileID: 4267409980367660}
+  - component: {fileID: 114110961773847226}
   m_Layer: 0
   m_Name: TerrainGen(Final)
   m_TagString: Untagged
@@ -27,29 +27,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4693469477314132
+--- !u!4 &4267409980367660
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1650150635480608}
+  m_GameObject: {fileID: 1065264614812580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 18.832827, y: 7.847437, z: -9.120372}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114236513755435422
+--- !u!114 &114110961773847226
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1650150635480608}
+  m_GameObject: {fileID: 1065264614812580}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c9256155e25b4ad290a43e413f8aed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plane: {fileID: 152448, guid: 21895626fd8947e4abf97b91d431bb1a, type: 2}
+  plane: {fileID: 0}
   player: {fileID: 0}

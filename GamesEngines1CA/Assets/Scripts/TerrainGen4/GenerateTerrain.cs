@@ -1,10 +1,4 @@
-﻿/*******************************************************
- * Copyright (C) 2015-2017 Penny de Byl (Holistic3d.com)
- * 
- * This file is part of InfiniteTerrainTrees Tutorial Project.
- * 
- *******************************************************/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 

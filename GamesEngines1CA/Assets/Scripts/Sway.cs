@@ -8,6 +8,7 @@ public class Sway : MonoBehaviour {
 
     public float theta;
     public Vector3 axis = Vector3.zero;
+	
 	// Use this for initialization
 	void Start () {
         if (axis == Vector3.zero)
@@ -16,11 +17,7 @@ public class Sway : MonoBehaviour {
             axis.y = 0;
             axis.Normalize();
         }
-        // Uncomment to use the job system
-        //SwayManager1.Instance.Add(this);
     }
-	
-    // Comment out to use the job system
     
 	void Update () {
         transform.localRotation = Quaternion.AngleAxis(

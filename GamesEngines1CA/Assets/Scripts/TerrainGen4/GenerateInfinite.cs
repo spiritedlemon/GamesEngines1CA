@@ -1,12 +1,7 @@
-﻿/*******************************************************
- * Copyright (C) 2015-2017 Penny de Byl (Holistic3d.com)
- * 
- * This file is part of InfiniteTerrainTrees Tutorial Project.
- * 
- *******************************************************/
-
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
+
+//Adapted from tutorial available at: https://www.youtube.com/watch?v=uDMfVMKM_98&list=WL&index=2&t=749s
 
 class Tile
 {
@@ -107,8 +102,7 @@ public class GenerateInfinite : MonoBehaviour {
 			{
 				if(tls.creationTime != updateTime)
 				{
-					//delete gameobject
-					Destroy(tls.theTile);
+					Destroy(tls.theTile); //delete gameobject
 				}
 				else
 				{

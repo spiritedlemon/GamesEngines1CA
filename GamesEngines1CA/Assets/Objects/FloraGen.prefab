@@ -9,17 +9,17 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1237376642182108}
+  m_RootGameObject: {fileID: 1343864823706598}
   m_IsPrefabAsset: 1
---- !u!1 &1237376642182108
+--- !u!1 &1343864823706598
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4083594519256164}
-  - component: {fileID: 114167352792514930}
+  - component: {fileID: 4106333510220064}
+  - component: {fileID: 114714174490069656}
   m_Layer: 0
   m_Name: FloraGen
   m_TagString: Untagged
@@ -27,28 +27,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4083594519256164
+--- !u!4 &4106333510220064
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1237376642182108}
+  m_GameObject: {fileID: 1343864823706598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 18.885117, y: 8.44284, z: -8.898689}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114167352792514930
+--- !u!114 &114714174490069656
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1237376642182108}
+  m_GameObject: {fileID: 1343864823706598}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b1ae7dada6e24714b13ad6aa3671d8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  treePrefab: {fileID: 1345907372631238, guid: 8f670d52480cdbf458bd0699f0469245, type: 2}
+  treePrefab: {fileID: 0}
