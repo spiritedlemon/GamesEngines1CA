@@ -12,7 +12,7 @@ public class TerrainTile : MonoBehaviour {
 
     Mesh m;
 	
-	
+	public GameObject tree;
 
     private delegate float SampleCell(float x, float y);
 
@@ -28,6 +28,9 @@ public class TerrainTile : MonoBehaviour {
     Vector2 offset;
     // Use this for initialization
     void Awake() {
+		
+		//GameObject tree = GameObject.Find("Tree1"); //Find tree game object
+		
         offset = Random.insideUnitCircle * Random.Range(0, 1000); 
         MeshFilter mf = gameObject.AddComponent<MeshFilter>(); // Container for the mesh
         MeshRenderer mr = gameObject.AddComponent<MeshRenderer>(); // Draw
@@ -95,6 +98,7 @@ public class TerrainTile : MonoBehaviour {
         mc.sharedMesh = m;
         mr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
         mr.receiveShadows = true;
+		Instantiate(tree);
 	}
     
     // Sample with a sine wave
