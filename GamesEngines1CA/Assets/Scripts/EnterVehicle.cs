@@ -6,6 +6,8 @@ public class EnterVehicle : MonoBehaviour {
 	
 	//Track if player is in Helicopter
 	public static int engine = 0;
+	//Track if player is in range of helicopter
+	public static int range = 0;
 
 	void Awake()
 	{
@@ -22,20 +24,11 @@ public class EnterVehicle : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		
-		
-		
-	}
-	
-	
-	void OnTriggerStay (Collider other)
-	{
-		//Debug.Log ("In trigger");
 		if (Input.GetKeyDown(KeyCode.E))
         {
-			if(engine == 0)
+			if(range == 1)
 			{
-				if (other.gameObject.tag == "Player") //Only if player is the colliding one
+				if(engine == 0)
 				{
 					//print("Player Movement and camera are disabled");
 					
@@ -58,50 +51,70 @@ public class EnterVehicle : MonoBehaviour {
 					
 					engine = 1;
 				}
-			}
 			
-			else //if engine == 1
-			{
-				//Debug.Log ("Trying to leave Heli");
-				
-				GameObject PlayerCam =  GameObject.Find("PlayerCamera"); //Find playerCam game object
-				PlayerCam.GetComponent<Camera>().enabled = true; //Enable Player camera
-				
-				GameObject PlayerGO = GameObject.FindWithTag("Player"); //Find player game object
-				PlayerGO.GetComponent<PlayerMovement>().enabled = true; //Enable player movement
-				
-				
-				GameObject HelicopterCam =  GameObject.Find("VehicleCamera"); //FindVehicleCam game object
-				HelicopterCam.GetComponent<Camera>().enabled = false; //disable helicopter camera
-				
-				GameObject HelicopterGO = GameObject.FindWithTag("Vehicle"); //Find Helicopter game object
-				HelicopterGO.GetComponent<PlayerFlying>().enabled = false; //disable player Flying (Helicopter)
-				HelicopterGO.GetComponent<Rigidbody>().isKinematic = false; //Reenable rigidbody (Should maybe use charController for this)
-				
-				GameObject Rotor = GameObject.Find("BladeMount"); //Find Helicopter Blades game object
-				Rotor.GetComponent<RotateBlades>().enabled = false; //disable Blades Spinning
-				
-				engine = 0;
+			
+				else //if engine == 1
+				{
+					//Debug.Log ("Trying to leave Heli");
+					
+					GameObject PlayerCam =  GameObject.Find("PlayerCamera"); //Find playerCam game object
+					PlayerCam.GetComponent<Camera>().enabled = true; //Enable Player camera
+					
+					GameObject PlayerGO = GameObject.FindWithTag("Player"); //Find player game object
+					PlayerGO.GetComponent<PlayerMovement>().enabled = true; //Enable player movement
+					
+					
+					GameObject HelicopterCam =  GameObject.Find("VehicleCamera"); //FindVehicleCam game object
+					HelicopterCam.GetComponent<Camera>().enabled = false; //disable helicopter camera
+					
+					GameObject HelicopterGO = GameObject.FindWithTag("Vehicle"); //Find Helicopter game object
+					HelicopterGO.GetComponent<PlayerFlying>().enabled = false; //disable player Flying (Helicopter)
+					HelicopterGO.GetComponent<Rigidbody>().isKinematic = false; //Reenable rigidbody (Should maybe use charController for this)
+					
+					GameObject Rotor = GameObject.Find("BladeMount"); //Find Helicopter Blades game object
+					Rotor.GetComponent<RotateBlades>().enabled = false; //disable Blades Spinning
+					
+					engine = 0;
+				}
 			}
 			
         }
 		
 		
-		
-		
 	}
-	
-	
-	/*
 	
 	void OnTriggerEnter (Collider other)
 	{
-		Debug.Log ("Entered trigger");
+		if (other.gameObject.tag == "Player")
+		{
+			//when player comes in range it is set to 1 (True)
+			range = 1;
+		}
 	}
 	void OnTriggerExit (Collider other)
 	{
-		Debug.Log ("Leaving trigger");
+		if (other.gameObject.tag == "Player")
+		{
+			range = 0;
+		}
+		//Debug.Log ("Leaving trigger");
 	}
+	
+	/*
+	void OnTriggerStay (Collider other)
+	{
+		//Debug.Log ("In trigger");
+		
+		
+		
+		
+		
+	}
+	*/
+	
+	/*
+	
+	
 	
 	*/
 }
