@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnterVehicle : MonoBehaviour {
+	
+	//Track if player is in Helicopter
+	public static int engine = 0;
 
 	void Awake()
 	{
@@ -13,15 +16,20 @@ public class EnterVehicle : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		
+		//int engine = 0; 
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
 		
+		if (Input.GetKeyDown(KeyCode.E) && engine == 1)
+		{
+			Debug.Log ("Trying to leave Heli");
+			
+		}
+		
 	}
-	
 	
 	
 	void OnTriggerStay (Collider other)
@@ -48,7 +56,11 @@ public class EnterVehicle : MonoBehaviour {
 			GameObject Rotor = GameObject.Find("BladeMount"); //Find Helicopter Blades game object
 			Rotor.GetComponent<RotateBlades>().enabled = true; //Enable Blades Spinning
 			
+			engine = 1;
+			
         }
+		
+		
 	}
 	
 	
