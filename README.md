@@ -11,15 +11,21 @@ Flight simulator set in a procedurally generated world
 
 --Procedural world
 
---Trees swaying to the music
+--Trees of varying color swaying
 
 --VR controls available
 
+Controls (Keyboard):
 
-Links:
+--Mouse to look around
 
-Terrain Generation: https://www.youtube.com/watch?v=vFvwyu_ZKfU&t=0s&index=3&list=WL
+--W,A,S,D to control movement
 
-More Terrain Generation: https://catlikecoding.com/
+--E to enter/Exit helicopter
 
-Unity standard assets: https://assetstore.unity.com/packages/essentials/asset-packs/standard-assets-32351
+--F to spawn helicopter
+
+--T to reload scene
+
+Controls(Oculus):
+
