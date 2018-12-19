@@ -20,17 +20,10 @@ public class CameraControl : MonoBehaviour
         xAxisLimit = 0.0f; 
 		
 		
+		horiz = "Mouse X";
+		vert = "Mouse Y";
 		
-		if (PlayerMovement.VREnabled == false)
-		{
-			horiz = "Mouse X";
-			vert = "Mouse Y";
-		}
-		else
-		{
-			
-			
-		}
+		
     }
 
 

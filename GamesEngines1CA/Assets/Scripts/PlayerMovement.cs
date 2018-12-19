@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
 	
     [SerializeField] private float movementSpeed; //Makes it easy to adjust speed
-	[SerializeField] public static bool VREnabled; //If player wants VR or standard
+	//[SerializeField] public static bool VREnabled; //If player wants VR or standard
 
     private CharacterController charController;
 	
@@ -16,11 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         charController = GetComponent<CharacterController>();
-		if( VREnabled == true)
-		{
-			Debug.Log("VR");
-			//XRSettings.enabled = true;
-		}
+		
     }
 
 	// Update is called once per frame
@@ -30,29 +26,15 @@ public class PlayerMovement : MonoBehaviour
 		
         //CharMove();
 		
-		if( VREnabled == false)
-		{
-			float horizInput = Input.GetAxis("Horizontal") * movementSpeed;
-			float vertInput = Input.GetAxis("Vertical") * movementSpeed;
-
-			Vector3 forwardMovement = transform.forward * vertInput;
-			Vector3 rightMovement = transform.right * horizInput;
-
-			charController.SimpleMove(forwardMovement + rightMovement);
-		}
 		
-		if( VREnabled == true) 
-		{
-			Debug.Log("In VR :)");
-			float horizInput = Input.GetAxis("Horizontal") * movementSpeed;
-			float vertInput = Input.GetAxis("Vertical") * movementSpeed;
-
-			Vector3 forwardMovement = transform.forward * vertInput;
-			Vector3 rightMovement = transform.right * horizInput;
-
-			charController.SimpleMove(forwardMovement + rightMovement);
-			
-		}
+		float horizInput = Input.GetAxis("Horizontal") * movementSpeed;
+		float vertInput = Input.GetAxis("Vertical") * movementSpeed;
+		
+		Vector3 forwardMovement = transform.forward * vertInput;
+		Vector3 rightMovement = transform.right * horizInput;
+		
+		charController.SimpleMove(forwardMovement + rightMovement);
+		
 		
 		//var x = Input.GetAxis("Horizontal") * Time.deltaTime * 100.0f;
         //var z = Input.GetAxis("Vertical") * Time.deltaTime * 8.0f;
