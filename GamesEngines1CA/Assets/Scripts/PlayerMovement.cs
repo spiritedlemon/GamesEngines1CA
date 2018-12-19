@@ -1,33 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.XR;
 
 public class PlayerMovement : MonoBehaviour 
 {
 	
     [SerializeField] private float movementSpeed; //Makes it easy to adjust speed
+	[SerializeField] private bool VREnabled; //If player wants VR or standard
 
     private CharacterController charController;
-
-    private bool isJumping;
+	
 
 	// Use this for initialization
     private void Awake()
     {
         charController = GetComponent<CharacterController>();
+		if( VREnabled == true)
+		{
+			//Debug.Log("VR");
+			//XRSettings.enabled = true;
+		}
     }
 
 	// Update is called once per frame
     private void Update()
     {
+		//OVRInput.Update();
+		
         CharMove();
+		
+		
 		
 		//var x = Input.GetAxis("Horizontal") * Time.deltaTime * 100.0f;
         //var z = Input.GetAxis("Vertical") * Time.deltaTime * 8.0f;
 
         //transform.Rotate(0, x, 0);
         //transform.Translate(0, 0, z);
-		
 		
 		/*
 		if (Input.GetKeyDown(KeyCode.E))
@@ -39,13 +48,27 @@ public class PlayerMovement : MonoBehaviour
 
     private void CharMove()
     {
-        float horizInput = Input.GetAxis("Horizontal") * movementSpeed;
-        float vertInput = Input.GetAxis("Vertical") * movementSpeed;
+		if( VREnabled == false)
+		{
+			float horizInput = Input.GetAxis("Horizontal") * movementSpeed;
+			float vertInput = Input.GetAxis("Vertical") * movementSpeed;
 
-        Vector3 forwardMovement = transform.forward * vertInput;
-        Vector3 rightMovement = transform.right * horizInput;
+			Vector3 forwardMovement = transform.forward * vertInput;
+			Vector3 rightMovement = transform.right * horizInput;
 
-        charController.SimpleMove(forwardMovement + rightMovement);
+			charController.SimpleMove(forwardMovement + rightMovement);
+		}
+		else //VREnabled == true
+		{
+			float horizInput = Input.GetAxis("Horizontal") * movementSpeed;
+			float vertInput = Input.GetAxis("Vertical") * movementSpeed;
+
+			Vector3 forwardMovement = transform.forward * vertInput;
+			Vector3 rightMovement = transform.right * horizInput;
+
+			charController.SimpleMove(forwardMovement + rightMovement);
+			
+		}
 
     }
 

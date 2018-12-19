@@ -79,7 +79,7 @@ public class EnterVehicle : MonoBehaviour {
 				GameObject Rotor = GameObject.Find("BladeMount"); //Find Helicopter Blades game object
 				Rotor.GetComponent<RotateBlades>().enabled = true; //Enable Blades Spinning
 				
-				heliPos = HelicopterGO.transform.position;
+				heliPos = HelicopterGO.transform.position; //get helicopters position
 				PlayerGO.transform.SetParent(HelicopterGO.transform, false); //Make player a child of helicopter
 				PlayerGO.transform.position = heliPos; //Set player's position to that of helicopter
 				

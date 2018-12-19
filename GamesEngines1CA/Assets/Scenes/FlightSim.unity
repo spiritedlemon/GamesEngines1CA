@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
+  VREnabled: 0
 --- !u!143 &725455936
 CharacterController:
   m_ObjectHideFlags: 0
