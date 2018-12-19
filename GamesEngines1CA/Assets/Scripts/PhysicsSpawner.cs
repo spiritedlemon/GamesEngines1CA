@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PhysicsSpawner : MonoBehaviour {
     public GameObject HeliPrefab;
@@ -32,6 +33,13 @@ public class PhysicsSpawner : MonoBehaviour {
                 q = Quaternion.Euler(0, xyz.y + 90, 0);
                 SpawnHeli(p, q);
             }
-        }       
+        } 
+
+		
+		if (Input.GetKeyDown (KeyCode.T) )
+		{
+			SceneManager.LoadScene("FlightSim");
+			
+		}
     }
 }
