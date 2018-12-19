@@ -45,6 +45,8 @@ public class EnterVehicle : MonoBehaviour {
 					GameObject HelicopterGO = GameObject.FindWithTag("Vehicle"); //Find Helicopter game object
 					HelicopterGO.GetComponent<PlayerFlying>().enabled = true; //Enable player Flying (Helicopter)
 					HelicopterGO.GetComponent<Rigidbody>().isKinematic = true; //Makes rigidbody kinematic making flying feel better
+					//HelicopterGO.transform.rotation = Quaternion.slerp(0, 0, 0);
+					HelicopterGO.transform.rotation = new Quaternion(0, 0, 0, 0);
 					
 					GameObject Rotor = GameObject.Find("BladeMount"); //Find Helicopter Blades game object
 					Rotor.GetComponent<RotateBlades>().enabled = true; //Enable Blades Spinning
@@ -104,9 +106,6 @@ public class EnterVehicle : MonoBehaviour {
 	void OnTriggerStay (Collider other)
 	{
 		//Debug.Log ("In trigger");
-		
-		
-		
 		
 		
 	}
