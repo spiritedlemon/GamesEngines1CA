@@ -8,17 +8,19 @@ public class CameraControl : MonoBehaviour
 
     [SerializeField] private Transform playerBody;
 
-    private float xAxisClamp;
+    private float xAxisLimit;
 
     private void Awake()
     {
         LockCursor();
-        xAxisClamp = 0.0f;
+		//Limit will be used to stop the player looking up/down more than 90'
+        xAxisLimit = 0.0f; 
     }
 
 
     private void LockCursor()
     {
+		//locks cursor to centre of view (and invisible, press [escape] to make re-appear)
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -32,26 +34,27 @@ public class CameraControl : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        xAxisClamp += mouseY;
+        xAxisLimit += mouseY;
 
-        if(xAxisClamp > 90.0f)
+        if(xAxisLimit > 90.0f)
         {
-            xAxisClamp = 90.0f;
+            xAxisLimit = 90.0f;
             mouseY = 0.0f;
-            ClampXAxisRotationToValue(270.0f);
+            LimitXAxisRotationToValue(270.0f);
         }
-        else if (xAxisClamp < -90.0f)
+        else if (xAxisLimit < -90.0f)
         {
-            xAxisClamp = -90.0f;
+            xAxisLimit = -90.0f;
             mouseY = 0.0f;
-            ClampXAxisRotationToValue(90.0f);
+            LimitXAxisRotationToValue(90.0f);
         }
 
+		//For turning the body and not just the camera:
         transform.Rotate(Vector3.left * mouseY);
         playerBody.Rotate(Vector3.up * mouseX);
     }
 
-    private void ClampXAxisRotationToValue(float value)
+    private void LimitXAxisRotationToValue(float value)
     {
         Vector3 eulerRotation = transform.eulerAngles;
         eulerRotation.x = value;
