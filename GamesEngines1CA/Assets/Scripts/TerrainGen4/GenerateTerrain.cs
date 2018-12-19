@@ -24,7 +24,7 @@ public class GenerateTerrain : MonoBehaviour {
 				if(newTree != null)
 				{
 					Vector3 treePos = new Vector3(vertices[v].x + this.transform.position.x,
-												  vertices[v].y - 1,
+												  vertices[v].y - 0.5f,
 												  vertices[v].z + this.transform.position.z);
 					newTree.transform.position = treePos;
 					newTree.SetActive(true);
@@ -34,10 +34,10 @@ public class GenerateTerrain : MonoBehaviour {
 			}
 			
 			//if(vertices[v].y < 0.3 && Mathf.PerlinNoise((vertices[v].x+5)/10,(vertices[v].z+5)/10)*10 > 4.6)
-			{
+			//{
 				
 				
-			}
+			//}
 
 		}
 
