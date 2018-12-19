@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
 	
     [SerializeField] private float movementSpeed; //Makes it easy to adjust speed
-	[SerializeField] private bool VREnabled; //If player wants VR or standard
+	[SerializeField] public static bool VREnabled; //If player wants VR or standard
 
     private CharacterController charController;
 	

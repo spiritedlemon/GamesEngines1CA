@@ -7,6 +7,9 @@ public class CameraControl : MonoBehaviour
     [SerializeField] private float mouseSensitivity;
 
     [SerializeField] private Transform playerBody;
+	
+	private string horiz;
+	private string vert;
 
     private float xAxisLimit;
 
@@ -15,6 +18,19 @@ public class CameraControl : MonoBehaviour
         LockCursor();
 		//Limit will be used to stop the player looking up/down more than 90'
         xAxisLimit = 0.0f; 
+		
+		
+		
+		if (PlayerMovement.VREnabled == false)
+		{
+			horiz = "Mouse X";
+			vert = "Mouse Y";
+		}
+		else
+		{
+			
+			
+		}
     }
 
 
@@ -26,13 +42,14 @@ public class CameraControl : MonoBehaviour
 
     private void Update()
     {
-        CameraRotation();
+		CameraRotation();
+		
     }
 
     private void CameraRotation()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        float mouseX = Input.GetAxis(horiz) * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis(vert) * mouseSensitivity * Time.deltaTime;
 
         xAxisLimit += mouseY;
 
