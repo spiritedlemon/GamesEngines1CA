@@ -33,7 +33,8 @@ public class EnterVehicle : MonoBehaviour {
 		//Debug.Log ("In trigger");
 		if (Input.GetKeyDown(KeyCode.E))
         {
-			
+			if(engine == 0)
+			{
 				if (other.gameObject.tag == "Player") //Only if player is the colliding one
 				{
 					//print("Player Movement and camera are disabled");
@@ -57,36 +58,35 @@ public class EnterVehicle : MonoBehaviour {
 					
 					engine = 1;
 				}
+			}
 			
-        }
-		
-		if (Input.GetKeyDown(KeyCode.E) && engine == 1)
-        {
-			
-			//print("Player Movement and camera are disabled");
-			//Debug.Log ("Trying to leave Heli");
+			else //if engine == 1
+			{
+				//Debug.Log ("Trying to leave Heli");
 				
-			GameObject PlayerCam =  GameObject.Find("PlayerCamera"); //Find playerCam game object
-			PlayerCam.GetComponent<Camera>().enabled = true; //Enable Player camera
-			
-			GameObject PlayerGO = GameObject.FindWithTag("Player"); //Find player game object
-			PlayerGO.GetComponent<PlayerMovement>().enabled = true; //Enable player movement
-			
-			
-			GameObject HelicopterCam =  GameObject.Find("VehicleCamera"); //FindVehicleCam game object
-			HelicopterCam.GetComponent<Camera>().enabled = false; //disable helicopter camera
-			
-			GameObject HelicopterGO = GameObject.FindWithTag("Vehicle"); //Find Helicopter game object
-			HelicopterGO.GetComponent<PlayerFlying>().enabled = false; //disable player Flying (Helicopter)
-			HelicopterGO.GetComponent<Rigidbody>().isKinematic = false; //Reenable rigidbody (Should maybe use charController for this)
-			
-			GameObject Rotor = GameObject.Find("BladeMount"); //Find Helicopter Blades game object
-			Rotor.GetComponent<RotateBlades>().enabled = false; //disable Blades Spinning
-			
-			engine = 0;
-		
+				GameObject PlayerCam =  GameObject.Find("PlayerCamera"); //Find playerCam game object
+				PlayerCam.GetComponent<Camera>().enabled = true; //Enable Player camera
+				
+				GameObject PlayerGO = GameObject.FindWithTag("Player"); //Find player game object
+				PlayerGO.GetComponent<PlayerMovement>().enabled = true; //Enable player movement
+				
+				
+				GameObject HelicopterCam =  GameObject.Find("VehicleCamera"); //FindVehicleCam game object
+				HelicopterCam.GetComponent<Camera>().enabled = false; //disable helicopter camera
+				
+				GameObject HelicopterGO = GameObject.FindWithTag("Vehicle"); //Find Helicopter game object
+				HelicopterGO.GetComponent<PlayerFlying>().enabled = false; //disable player Flying (Helicopter)
+				HelicopterGO.GetComponent<Rigidbody>().isKinematic = false; //Reenable rigidbody (Should maybe use charController for this)
+				
+				GameObject Rotor = GameObject.Find("BladeMount"); //Find Helicopter Blades game object
+				Rotor.GetComponent<RotateBlades>().enabled = false; //disable Blades Spinning
+				
+				engine = 0;
+			}
 			
         }
+		
+		
 		
 		
 	}
