@@ -8,6 +8,8 @@ public class EnterVehicle : MonoBehaviour {
 	public static int engine = 0;
 	//Track if player is in range of helicopter
 	public static int range = 0;
+	//Store heli position
+	Vector3 heliPos;
 
 	void Awake()
 	{
@@ -57,7 +59,6 @@ public class EnterVehicle : MonoBehaviour {
 			
 			if(range == 1 && engine == 0)
 			{
-				
 				//print("Player Movement and camera are disabled");
 				
 				GameObject PlayerCam =  GameObject.Find("PlayerCamera"); //Find playerCam game object
@@ -73,12 +74,14 @@ public class EnterVehicle : MonoBehaviour {
 				HelicopterGO.GetComponent<PlayerFlying>().enabled = true; //Enable player Flying (Helicopter)
 				HelicopterGO.GetComponent<Rigidbody>().isKinematic = true; //Makes rigidbody kinematic making flying feel better
 				//HelicopterGO.transform.rotation = Quaternion.slerp(0, 0, 0);
-				HelicopterGO.transform.rotation = new Quaternion(0, 0, 0, 0);
+				HelicopterGO.transform.rotation = new Quaternion(0, 0, 0, 0); //Set helicopter's rotation in case its on an incline
 				
 				GameObject Rotor = GameObject.Find("BladeMount"); //Find Helicopter Blades game object
 				Rotor.GetComponent<RotateBlades>().enabled = true; //Enable Blades Spinning
 				
-				PlayerGO.transform.SetParent(HelicopterGO.transform, false);
+				heliPos = HelicopterGO.transform.position;
+				PlayerGO.transform.SetParent(HelicopterGO.transform, false); //Make player a child of helicopter
+				PlayerGO.transform.position = heliPos; //Set player's position to that of helicopter
 				
 				engine = 1;
 				
