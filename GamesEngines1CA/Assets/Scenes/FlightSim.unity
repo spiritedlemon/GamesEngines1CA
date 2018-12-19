@@ -283,12 +283,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74912b7ccd079f04898b22cf638f3fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubePrefab: {fileID: 0}
-  wormPrefab: {fileID: 0}
-  player: {fileID: 0}
+  HeliPrefab: {fileID: 1411232659496312, guid: b2f0ce68d4847f74faaaa7230780791f, type: 2}
+  player: {fileID: 725455933}
   groundLM:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
 --- !u!4 &767679409
 Transform:
   m_ObjectHideFlags: 0

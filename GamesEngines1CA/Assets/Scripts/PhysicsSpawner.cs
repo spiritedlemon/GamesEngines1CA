@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PhysicsSpawner : MonoBehaviour {
-    public GameObject cubePrefab;
-    public GameObject wormPrefab;
+    //public GameObject cubePrefab;
+    public GameObject HeliPrefab;
     public GameObject player;
 
     public LayerMask groundLM;
     // Use this for initialization
-
+	
+	/*
     void CreateTower(float radius, int height, int segments, Vector3 point)
     {
         float thetaInc = (Mathf.PI * 2.0f) / (float)segments;
@@ -28,10 +29,11 @@ public class PhysicsSpawner : MonoBehaviour {
             }
         }
     }
+	*/
 
     void CreateWorm(Vector3 point, Quaternion q)
     {
-        GameObject worm = GameObject.Instantiate<GameObject>(wormPrefab, point, q);
+        GameObject heli = GameObject.Instantiate<GameObject>(HeliPrefab, point, q);
 
     }
 
@@ -40,6 +42,7 @@ public class PhysicsSpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		/*
         if (Input.GetKeyDown(KeyCode.U))
         {
             RaycastHit rch;
@@ -50,8 +53,10 @@ public class PhysicsSpawner : MonoBehaviour {
                 CreateTower(3, 10, 12, p);
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.I))
+		*/
+		
+		//On f press - Spawn helicopter
+        if (Input.GetKeyDown(KeyCode.F))
         {
             RaycastHit rch;
             if (Physics.Raycast(player.transform.position, player.transform.forward, out rch, 100, groundLM))

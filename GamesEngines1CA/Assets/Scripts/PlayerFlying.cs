@@ -28,6 +28,7 @@ public class PlayerFlying : MonoBehaviour {
 		//Debug.Log(p);
 		
 		/*
+		//Tilt helicopter in direction its moving 
 		float x = Input.GetAxis("Vertical") * 15.0f; 
 		Vector3 euler = transform.localEulerAngles;
 		euler.x = Mathf.Lerp(euler.x, x, 1.0f * Time.deltaTime);
@@ -36,7 +37,7 @@ public class PlayerFlying : MonoBehaviour {
 		
 		if(Input.GetKey(KeyCode.Space))
 		{
-			Debug.Log("Player going up");
+			//Debug.Log("Player going up");
 			var h = 1 * Time.deltaTime * 8.0f;
 			transform.Translate(0, h, 0);
 			
@@ -44,7 +45,7 @@ public class PlayerFlying : MonoBehaviour {
 		
 		if(Input.GetKey(KeyCode.LeftShift))
 		{
-			Debug.Log("Player going down");
+			//Debug.Log("Player going down");
 			var h = 1 * Time.deltaTime * -8.0f;
 			transform.Translate(0, h, 0);
 		}
