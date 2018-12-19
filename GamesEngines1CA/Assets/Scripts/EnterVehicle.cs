@@ -48,6 +48,8 @@ public class EnterVehicle : MonoBehaviour {
 					
 				GameObject Rotor = GameObject.Find("BladeMount"); //Find Helicopter Blades game object
 				Rotor.GetComponent<RotateBlades>().enabled = false; //disable Blades Spinning
+				
+				PlayerGO.transform.SetParent(null, false);
 					
 				engine = 0;
 			}
@@ -76,7 +78,7 @@ public class EnterVehicle : MonoBehaviour {
 				GameObject Rotor = GameObject.Find("BladeMount"); //Find Helicopter Blades game object
 				Rotor.GetComponent<RotateBlades>().enabled = true; //Enable Blades Spinning
 				
-				//PlayerGO.transform.SetParent(HelicopterGO.transform, false);
+				PlayerGO.transform.SetParent(HelicopterGO.transform, false);
 				
 				engine = 1;
 				
