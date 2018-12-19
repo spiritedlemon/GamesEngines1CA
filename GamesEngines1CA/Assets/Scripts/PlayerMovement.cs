@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
         charController = GetComponent<CharacterController>();
 		if( VREnabled == true)
 		{
-			//Debug.Log("VR");
+			Debug.Log("VR");
 			//XRSettings.enabled = true;
 		}
     }
@@ -28,9 +28,31 @@ public class PlayerMovement : MonoBehaviour
     {
 		//OVRInput.Update();
 		
-        CharMove();
+        //CharMove();
 		
+		if( VREnabled == false)
+		{
+			float horizInput = Input.GetAxis("Horizontal") * movementSpeed;
+			float vertInput = Input.GetAxis("Vertical") * movementSpeed;
+
+			Vector3 forwardMovement = transform.forward * vertInput;
+			Vector3 rightMovement = transform.right * horizInput;
+
+			charController.SimpleMove(forwardMovement + rightMovement);
+		}
 		
+		if( VREnabled == true) 
+		{
+			Debug.Log("In VR :)");
+			float horizInput = Input.GetAxis("Horizontal") * movementSpeed;
+			float vertInput = Input.GetAxis("Vertical") * movementSpeed;
+
+			Vector3 forwardMovement = transform.forward * vertInput;
+			Vector3 rightMovement = transform.right * horizInput;
+
+			charController.SimpleMove(forwardMovement + rightMovement);
+			
+		}
 		
 		//var x = Input.GetAxis("Horizontal") * Time.deltaTime * 100.0f;
         //var z = Input.GetAxis("Vertical") * Time.deltaTime * 8.0f;
@@ -46,32 +68,13 @@ public class PlayerMovement : MonoBehaviour
 		*/
     }
 
+	/*
     private void CharMove()
     {
-		if( VREnabled == false)
-		{
-			float horizInput = Input.GetAxis("Horizontal") * movementSpeed;
-			float vertInput = Input.GetAxis("Vertical") * movementSpeed;
-
-			Vector3 forwardMovement = transform.forward * vertInput;
-			Vector3 rightMovement = transform.right * horizInput;
-
-			charController.SimpleMove(forwardMovement + rightMovement);
-		}
-		else //VREnabled == true
-		{
-			float horizInput = Input.GetAxis("Horizontal") * movementSpeed;
-			float vertInput = Input.GetAxis("Vertical") * movementSpeed;
-
-			Vector3 forwardMovement = transform.forward * vertInput;
-			Vector3 rightMovement = transform.right * horizInput;
-
-			charController.SimpleMove(forwardMovement + rightMovement);
-			
-		}
+		
 
     }
 
-    
+    */
 
 }

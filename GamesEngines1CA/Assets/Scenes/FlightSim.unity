@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
-  VREnabled: 0
+  VREnabled: 1
 --- !u!143 &725455936
 CharacterController:
   m_ObjectHideFlags: 0
@@ -479,6 +479,26 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4785614042195732, guid: b2f0ce68d4847f74faaaa7230780791f, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672290847330830, guid: b2f0ce68d4847f74faaaa7230780791f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672290847330830, guid: b2f0ce68d4847f74faaaa7230780791f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672290847330830, guid: b2f0ce68d4847f74faaaa7230780791f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672290847330830, guid: b2f0ce68d4847f74faaaa7230780791f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672290847330830, guid: b2f0ce68d4847f74faaaa7230780791f, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
