@@ -20,6 +20,7 @@ public class TreePool : MonoBehaviour {
 		for(int i = 0; i < numTrees; i++)
 		{
 			rand = Random.Range(0,3);
+			Debug.Log(rand);
 			switch(rand)
 			{
 				default:

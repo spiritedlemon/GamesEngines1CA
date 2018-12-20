@@ -3,7 +3,7 @@
 [RequireComponent(typeof(AudioSource))]
 
 public class AudioAnalyzer2 : MonoBehaviour {
-    public static MusicAnalyzerFree instance = null;
+    public static AudioAnalyzer2 instance = null;
     private AudioSource audio;
     float[] spectrum = new float[128];
     // Spectrum is multiplayed with volume. To take any values from spectrum, volume should have not zero value

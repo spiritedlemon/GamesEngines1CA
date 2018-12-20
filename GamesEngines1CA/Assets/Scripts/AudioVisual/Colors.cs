@@ -4,7 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(Material))]
 
 public class Colors : MonoBehaviour {
-    private MusicAnalyzerFree analyzer;
+    private AudioAnalyzer2 analyzer;
     private Material material;
     public Color basicsColor = Color.grey;
     private Color color;
@@ -16,7 +16,7 @@ public class Colors : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        analyzer = MusicAnalyzerFree.instance;
+        analyzer = AudioAnalyzer2.instance;
         material = GetComponent<MeshRenderer>().material;
         material.color = basicsColor;
     }
