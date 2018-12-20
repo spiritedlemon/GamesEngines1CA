@@ -6,12 +6,13 @@ public class AudioAnalyzer2 : MonoBehaviour {
     public static AudioAnalyzer2 instance = null;
     private AudioSource audio;
     float[] spectrum = new float[128];
-    // Spectrum is multiplayed with volume. To take any values from spectrum, volume should have not zero value
-    [SerializeField] [HideInInspector] private float minVolume = 0.005f;
+    //Spectrum is multiplyed by volume 
+	//To take any values from spectrum, volume should have not zero value
+    [SerializeField] private float minVolume = 0.005f;
     [SerializeField] private Color color = Color.white;
     public AudioClip Song;
 
-    // Examples of multypliers
+    // Examples of multipliers
     private float red;
     private float green;
     private float blue;
@@ -62,31 +63,43 @@ public class AudioAnalyzer2 : MonoBehaviour {
     private void UpdateColor()
     {
         red = 0;
-        for (int i = 1; i < 3; i++)
+        for (int i = 1; i < 12; i++)
         {
             red += spectrum[i];
         }
+		
         red *= multiplyRed * spectrumMultiply;
-        if (red < 0) red = 0;
-        else if (red > 1) red = 1;
+		
+        if (red < 0)
+			red = 0;
+        else if (red > 1) 
+			red = 1;
 
         green = 0;
-        for (int i = 5; i < 26; i++)
+        for (int i = 13; i < 42; i++)
         {
             green += spectrum[i];
         }
+		
         green *= multiplyGreen * spectrumMultiply;
-        if (green < 0) green = 0;
-        else if (green > 1) green = 1;
+		
+        if (green < 0) 
+			green = 0;
+        else if (green > 1) 
+			green = 1;
 
         blue = 0;
-        for (int i = 36; i < 128; i++)
+        for (int i = 52; i < 128; i++)
         {
             blue += spectrum[i];
         }
+		
         blue *= multiplyBlue * spectrumMultiply;
-        if (blue < 0) blue = 0;
-        else if (blue > 1) blue = 1;
+		
+        if (blue < 0) 
+			blue = 0;
+        else if (blue > 1) 
+			blue = 1;
 
         color = new Color(red, green, blue);
     }

@@ -9,7 +9,6 @@ public class Colors : MonoBehaviour {
     public Color basicsColor = Color.grey;
     private Color color;
     private Color newColor;
-    public bool isEmissive = false;
     public bool useRed = true;
     public bool useGreen = true;
     public bool useBlue = true;
@@ -24,13 +23,6 @@ public class Colors : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         GetColorUpdate();
-        if(isEmissive)
-        {
-            GetEmissiveColorUpdate();
-        } else
-        {
-            GetNoEmissiveColorUpdate();
-        }
 	}
 
     void GetColorUpdate()
@@ -63,20 +55,10 @@ public class Colors : MonoBehaviour {
             newColor.b = 0;
         }
 
-        //color = new Color(useRed ? newColor.r : color.r, useGreen ? newColor.g : color.g, useBlue ? newColor.b : color.b);
 		color = new Color(newColor.r, newColor.g, newColor.b);
 
         material.color = color;
     }
 
-    void GetEmissiveColorUpdate()
-    {
-        material.SetColor("_EmissionColor", color);
-    }
-
-    void GetNoEmissiveColorUpdate()
-    {
-        material.SetColor("_EmissionColor", Color.black);
-    }
     
 }
