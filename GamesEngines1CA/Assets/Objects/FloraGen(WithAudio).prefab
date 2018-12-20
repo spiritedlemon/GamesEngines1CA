@@ -9,50 +9,52 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1302559971596536}
+  m_RootGameObject: {fileID: 1884247725299524}
   m_IsPrefabAsset: 1
---- !u!1 &1302559971596536
+--- !u!1 &1884247725299524
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4605206751763060}
-  - component: {fileID: 114803373847855260}
+  - component: {fileID: 4561616443975454}
+  - component: {fileID: 114497651923837840}
   m_Layer: 0
-  m_Name: HelicopterSpawner
+  m_Name: FloraGen(WithAudio)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4605206751763060
+  m_IsActive: 0
+--- !u!4 &4561616443975454
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1302559971596536}
+  m_GameObject: {fileID: 1884247725299524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114803373847855260
+--- !u!114 &114497651923837840
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1302559971596536}
+  m_GameObject: {fileID: 1884247725299524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74912b7ccd079f04898b22cf638f3fd6, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b1ae7dada6e24714b13ad6aa3671d8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeliPrefab: {fileID: 1481967583107328, guid: b2f0ce68d4847f74faaaa7230780791f, type: 2}
-  player: {fileID: 0}
-  groundLM:
-    serializedVersion: 2
-    m_Bits: 4294967295
+  treePrefab: {fileID: 1631165825750686, guid: 9f780c591d4b2164a8fab9ad573ad342, type: 2}
+  treePrefab1: {fileID: 1727285069366084, guid: 7aa3c5609defd4e419e5d0b25ccea76e,
+    type: 2}
+  treePrefab2: {fileID: 1395488119553052, guid: 7dcf34317dc881f49af19b921155a39a,
+    type: 2}
+  treePrefab3: {fileID: 1631165825750686, guid: 9f780c591d4b2164a8fab9ad573ad342,
+    type: 2}

@@ -379,6 +379,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114110961773847226, guid: 60347cc82a175454c863e462f1a0824e,
+        type: 2}
+      propertyPath: plane
+      value: 
+      objectReference: {fileID: 1213230840765758, guid: b02886efa71b99647b72f0f9581abf0d,
+        type: 2}
+    - target: {fileID: 114110961773847226, guid: 60347cc82a175454c863e462f1a0824e,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1201900302}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60347cc82a175454c863e462f1a0824e, type: 2}
   m_IsPrefabAsset: 0
@@ -421,9 +432,25 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114969839150824984, guid: 0d4bd64786abeaf4ab3ab708d0f920b3,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1201900302}
+    - target: {fileID: 114969839150824984, guid: 0d4bd64786abeaf4ab3ab708d0f920b3,
+        type: 2}
+      propertyPath: HeliPrefab
+      value: 
+      objectReference: {fileID: 1481967583107328, guid: b2f0ce68d4847f74faaaa7230780791f,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d4bd64786abeaf4ab3ab708d0f920b3, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1201900302 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1722974110808260, guid: da5093b76cbf7764fba7b14ee8276bc2,
+    type: 2}
+  m_PrefabInternal: {fileID: 440013285}
 --- !u!1 &1691051296
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,3 +559,22 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f69fa3424cf96346a8b6df221cea3b3, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1818102117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1989212834386028, guid: 0f69fa3424cf96346a8b6df221cea3b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1818102116}
+--- !u!114 &1818102118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1818102117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b8c66ca7fb8a524ab211151c933a9f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 10
+  leaves: {fileID: 1818102117}
+  radius: 50

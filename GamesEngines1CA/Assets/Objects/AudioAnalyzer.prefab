@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minVolume: 0.005
-  color: {r: 0.40077156, g: 0.4811321, b: 0.37900499, a: 1}
+  color: {r: 0.4715404, g: 0.6320754, b: 0.30113026, a: 1}
   Song: {fileID: 8300000, guid: f366b59aa2c1f0a4189c42da0d405bd7, type: 3}
   multiplyRed: 0.34
   multiplyGreen: 0.34

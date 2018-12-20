@@ -40,7 +40,6 @@ public class EnterVehicle : MonoBehaviour {
 				GameObject PlayerGO = GameObject.FindWithTag("Player"); //Find player game object
 				PlayerGO.GetComponent<PlayerMovement>().enabled = true; //Enable player movement
 					
-					
 				GameObject HelicopterCam =  GameObject.Find("VehicleCamera"); //FindVehicleCam game object
 				HelicopterCam.GetComponent<Camera>().enabled = false; //disable helicopter camera
 					
@@ -55,36 +54,36 @@ public class EnterVehicle : MonoBehaviour {
 					
 				engine = 0;
 			}
-			
-			
-			if(range == 1 && engine == 0)
+			else   ///(engine == 0)
 			{
-				//print("Player Movement and camera are disabled");
-				
-				GameObject PlayerCam =  GameObject.Find("PlayerCamera"); //Find playerCam game object
-				PlayerCam.GetComponent<Camera>().enabled = false; //Disable Player camera
-				
-				GameObject PlayerGO = GameObject.FindWithTag("Player"); //Find player game object
-				PlayerGO.GetComponent<PlayerMovement>().enabled = false; //Disable player movement
-				
-				GameObject HelicopterCam =  GameObject.Find("VehicleCamera"); //FindVehicleCam game object
-				HelicopterCam.GetComponent<Camera>().enabled = true; //Enable helicopter camera
-				
-				GameObject HelicopterGO = GameObject.FindWithTag("Vehicle"); //Find Helicopter game object
-				HelicopterGO.GetComponent<PlayerFlying>().enabled = true; //Enable player Flying (Helicopter)
-				HelicopterGO.GetComponent<Rigidbody>().isKinematic = true; //Makes rigidbody kinematic making flying feel better
-				//HelicopterGO.transform.rotation = Quaternion.slerp(0, 0, 0);
-				HelicopterGO.transform.rotation = new Quaternion(0, 0, 0, 0); //Set helicopter's rotation in case its on an incline
-				
-				GameObject Rotor = GameObject.Find("BladeMount"); //Find Helicopter Blades game object
-				Rotor.GetComponent<RotateBlades>().enabled = true; //Enable Blades Spinning
-				
-				heliPos = HelicopterGO.transform.position; //get helicopters position
-				PlayerGO.transform.SetParent(HelicopterGO.transform, false); //Make player a child of helicopter
-				PlayerGO.transform.position = heliPos; //Set player's position to that of helicopter
-				
-				engine = 1;
-				
+				if(range == 1)
+				{
+					//print("Player Movement and camera are disabled");
+					
+					GameObject PlayerCam =  GameObject.Find("PlayerCamera"); //Find playerCam game object
+					PlayerCam.GetComponent<Camera>().enabled = false; //Disable Player camera
+					
+					GameObject PlayerGO = GameObject.FindWithTag("Player"); //Find player game object
+					PlayerGO.GetComponent<PlayerMovement>().enabled = false; //Disable player movement
+					
+					GameObject HelicopterCam =  GameObject.Find("VehicleCamera"); //FindVehicleCam game object
+					HelicopterCam.GetComponent<Camera>().enabled = true; //Enable helicopter camera
+					
+					GameObject HelicopterGO = GameObject.FindWithTag("Vehicle"); //Find Helicopter game object
+					HelicopterGO.GetComponent<PlayerFlying>().enabled = true; //Enable player Flying (Helicopter)
+					HelicopterGO.GetComponent<Rigidbody>().isKinematic = true; //Makes rigidbody kinematic making flying feel better
+					//HelicopterGO.transform.rotation = Quaternion.slerp(0, 0, 0);
+					HelicopterGO.transform.rotation = new Quaternion(0, 0, 0, 0); //Set helicopter's rotation in case its on an incline
+					
+					GameObject Rotor = GameObject.Find("BladeMount"); //Find Helicopter Blades game object
+					Rotor.GetComponent<RotateBlades>().enabled = true; //Enable Blades Spinning
+					
+					heliPos = HelicopterGO.transform.position; //get helicopters position
+					PlayerGO.transform.SetParent(HelicopterGO.transform, false); //Make player a child of helicopter
+					PlayerGO.transform.position = heliPos; //Set player's position to that of helicopter
+					
+					engine = 1;
+				}
 			
 			}
 			

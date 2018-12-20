@@ -218,7 +218,7 @@ MonoBehaviour:
   basicsColor: {r: 0.14524741, g: 0.6037736, b: 0.16533977, a: 1}
   useRed: 1
   useGreen: 1
-  useBlue: 1
+  useBlue: 0
 --- !u!135 &135049290489991704
 SphereCollider:
   m_ObjectHideFlags: 1
