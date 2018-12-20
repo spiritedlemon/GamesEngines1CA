@@ -13,19 +13,26 @@ Flight simulator set in a procedurally generated world
 
 --Trees of varying color swaying
 
---VR controls available
+--Audio player (Trees pulse to audio) 
 
 Controls (Keyboard):
 
 --Mouse to look around
 
---W,A,S,D to control movement
+--W,A,S,D to control movement (Arrow keys work too)
 
---E to enter/Exit helicopter
+--E to Enter/Exit helicopter 
 
---F to spawn helicopter
+--F to spawn helicopter where youre looking 
 
---T to reload scene
+--T to reload scene 
 
-Controls(Oculus):
+Demonstration Video:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EtD-Ph55v4w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Video Link: https://youtu.be/EtD-Ph55v4w
+
+What is going on:
+
 
