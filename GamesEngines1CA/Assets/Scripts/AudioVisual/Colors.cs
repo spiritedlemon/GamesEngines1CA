@@ -39,10 +39,12 @@ public class Colors : MonoBehaviour {
         if(useRed && newColor.r > 1)
         {
             newColor.r = 1;
-        } else if(useRed && newColor.r > 1)
+        } 
+		else if(useRed && newColor.r < 0)
         {
             newColor.r = 0;
         }
+		
         if (useGreen && newColor.g > 1)
         {
             newColor.g = 1;
@@ -51,6 +53,7 @@ public class Colors : MonoBehaviour {
         {
             newColor.g = 0;
         }
+		
         if (useBlue && newColor.r > 1)
         {
             newColor.b = 1;
@@ -60,7 +63,8 @@ public class Colors : MonoBehaviour {
             newColor.b = 0;
         }
 
-        color = new Color(useRed ? newColor.r : color.r, useGreen ? newColor.g : color.g, useBlue ? newColor.b : color.b);
+        //color = new Color(useRed ? newColor.r : color.r, useGreen ? newColor.g : color.g, useBlue ? newColor.b : color.b);
+		color = new Color(newColor.r, newColor.g, newColor.b);
 
         material.color = color;
     }

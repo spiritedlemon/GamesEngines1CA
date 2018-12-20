@@ -19,7 +19,7 @@ public class TreePool : MonoBehaviour {
 		trees = new GameObject[numTrees];
 		for(int i = 0; i < numTrees; i++)
 		{
-			rand = Random.Range(0,3);
+			rand = Random.Range(0,4); //Meaning 0, 1, 2 & 3 can be chosen
 			Debug.Log(rand);
 			switch(rand)
 			{
